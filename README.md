@@ -1,5 +1,5 @@
 # Blog
-Blog Javascript Project
+A simple blog using Javascript
 
 * Node.js (Server-Side)
 * Express js (Node Framework)
@@ -7,4 +7,5 @@ Blog Javascript Project
   1. BodyParser
   2. Ejs 
   3. Lodash
+
 
