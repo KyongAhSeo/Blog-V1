@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
+const config = require("./config/key");
 //1. 설치
 const mongoose = require("mongoose");
 
@@ -23,13 +24,10 @@ app.use(
 app.use(express.static("public"));
 
 //2. 연결
-mongoose.connect(
-  "mongodb+srv://kyong-admin:test123@cluster0.x6hee.mongodb.net/postDB",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(config.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 //3. 스키마 생성
 const postsShema = {
