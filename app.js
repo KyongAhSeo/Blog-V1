@@ -23,10 +23,13 @@ app.use(
 app.use(express.static("public"));
 
 //2. 연결
-mongoose.connect("mongodb://localhost:27017/postDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://kyong-admin:test123@cluster0.x6hee.mongodb.net/postDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 //3. 스키마 생성
 const postsShema = {
@@ -91,11 +94,11 @@ app.get("/posts/:postId", function (req, res) {
   });
 });
 
-let port = process.env.PORT;
-if (port == numm || port == "") {
-  port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == numm || port == "") {
+//   port = 3000;
+// }
 
-app.listen(port, function () {
+app.listen(3000, function () {
   console.log("Server has started successfully");
 });
